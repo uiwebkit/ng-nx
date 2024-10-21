@@ -1,0 +1,74 @@
+{
+  "name": "shared-view",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-view/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared-view/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/shared-view/.storybook",
+        "browserTarget": "shared-view:build-storybook",
+        "styles": ["@angular/material/prebuilt-themes/azure-blue.css"],
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "libs/shared-view"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/shared-view",
+        "configDir": "libs/shared-view/.storybook",
+        "browserTarget": "shared-view:build-storybook",
+        "styles": ["@angular/material/prebuilt-themes/azure-blue.css"],
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "libs/shared-view"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/shared-view/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "dependsOn": ["build-storybook"],
+      "options": {
+        "buildTarget": "shared-view:build-storybook",
+        "staticFilePath": "dist/storybook/shared-view",
+        "styles": ["@angular/material/prebuilt-themes/azure-blue.css"],
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "shared-view:build-storybook:ci"
+        }
+      }
+    }
+  }
+}

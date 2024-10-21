@@ -1,0 +1,484 @@
+{
+  "pipes": [],
+  "interfaces": [],
+  "injectables": [],
+  "guards": [],
+  "interceptors": [],
+  "classes": [],
+  "directives": [],
+  "components": [
+    {
+      "name": "SharedLoadingComponent",
+      "id": "component-SharedLoadingComponent-5588a54875ae5539b1d39a8329fc1e49a20634af3c9e534f3c49b6ca9d5e12b64537d005088f8b9d20119114fc0c53a1a7e6413e187ebdbb6d86fc7d5a05748c",
+      "file": "libs/shared-view/src/lib/components/loading/loading.component.ts",
+      "changeDetection": "ChangeDetectionStrategy.OnPush",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "lib-shared-loader",
+      "styleUrls": [],
+      "styles": [
+        "\n      .lib-loading-shade {\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: 0;\n        right: 0;\n        background: rgba(0, 0, 0, 0.15);\n        z-index: 999;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n    "
+      ],
+      "template": "@if (store.isLoading() || loading()) {\n  @if (linear()) {\n    <mat-progress-bar mode=\"indeterminate\" />\n  } @else {\n    <div class=\"lib-loading-shade\">\n      <mat-spinner />\n    </div>\n  }\n}\n",
+      "templateUrl": [],
+      "viewProviders": [],
+      "hostDirectives": [],
+      "inputsClass": [
+        {
+          "name": "linear",
+          "defaultValue": "false",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "InputSignal<boolean>",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 43,
+          "required": false
+        },
+        {
+          "name": "loading",
+          "defaultValue": "false",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "InputSignal<boolean>",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 44,
+          "required": false
+        }
+      ],
+      "outputsClass": [],
+      "propertiesClass": [
+        {
+          "name": "linear",
+          "defaultValue": "false",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "InputSignal<boolean>",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 43,
+          "required": false
+        },
+        {
+          "name": "loading",
+          "defaultValue": "false",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "InputSignal<boolean>",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 44,
+          "required": false
+        },
+        {
+          "name": "store",
+          "defaultValue": "inject(UniLoadingService)",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 41,
+          "modifierKind": [148]
+        }
+      ],
+      "methodsClass": [],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "standalone": true,
+      "imports": [
+        {
+          "name": "MatProgressBarModule",
+          "type": "module"
+        },
+        {
+          "name": "MatProgressSpinnerModule",
+          "type": "module"
+        }
+      ],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { ChangeDetectionStrategy, Component, inject, input, InputSignal } from '@angular/core';\nimport { MatProgressBarModule } from '@angular/material/progress-bar';\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\n\nimport { UniLoadingService } from '@ng-nx/common-data';\n\n@Component({\n  selector: 'lib-shared-loader',\n  standalone: true,\n  imports: [MatProgressBarModule, MatProgressSpinnerModule],\n  template: `\n    @if (store.isLoading() || loading()) {\n      @if (linear()) {\n        <mat-progress-bar mode=\"indeterminate\" />\n      } @else {\n        <div class=\"lib-loading-shade\">\n          <mat-spinner />\n        </div>\n      }\n    }\n  `,\n  styles: [\n    `\n      .lib-loading-shade {\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: 0;\n        right: 0;\n        background: rgba(0, 0, 0, 0.15);\n        z-index: 999;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n    `,\n  ],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class SharedLoadingComponent {\n  readonly store = inject(UniLoadingService);\n\n  linear: InputSignal<boolean> = input(false);\n  loading: InputSignal<boolean> = input(false);\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": "",
+      "stylesData": "\n      .lib-loading-shade {\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: 0;\n        right: 0;\n        background: rgba(0, 0, 0, 0.15);\n        z-index: 999;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n    \n",
+      "extends": []
+    },
+    {
+      "name": "SharedRootComponent",
+      "id": "component-SharedRootComponent-1c63e4202b6ed9355a8ad656b7a4d36cd6726dd8dd4bbe218c7a2c0a7d0fc212f2bd3bbbc7d5db4bd5a2618aa6fd746a7e7d4a0bb5264683f80dfc1b66b067c8",
+      "file": "libs/shared-view/src/lib/components/root/root.component.ts",
+      "changeDetection": "ChangeDetectionStrategy.OnPush",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "lib-shared-root",
+      "styleUrls": [],
+      "styles": [],
+      "template": "<router-outlet />",
+      "templateUrl": [],
+      "viewProviders": [],
+      "hostDirectives": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "standalone": true,
+      "imports": [
+        {
+          "name": "RouterOutlet"
+        }
+      ],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'lib-shared-root',\n  standalone: true,\n  imports: [RouterOutlet],\n  template: '<router-outlet />',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class SharedRootComponent {}\n",
+      "assetsDirs": [],
+      "styleUrlsData": "",
+      "stylesData": "",
+      "extends": []
+    }
+  ],
+  "modules": [],
+  "miscellaneous": {
+    "variables": [
+      {
+        "name": "config",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/shared-view/.storybook/main.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "StorybookConfig",
+        "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n}"
+      },
+      {
+        "name": "Heading",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\n  args: {\n    linear: true,\n    loading: true,\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/loading works!/gi)).toBeTruthy();\n  },\n}"
+      },
+      {
+        "name": "Heading",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/root works!/gi)).toBeTruthy();\n  },\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<SharedLoadingComponent>",
+        "defaultValue": "{\n  component: SharedLoadingComponent,\n  title: 'SharedLoadingComponent',\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<SharedRootComponent>",
+        "defaultValue": "{\n  component: SharedRootComponent,\n  title: 'SharedRootComponent',\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\n  args: {\n    linear: false,\n    loading: true,\n  },\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\n  args: {},\n}"
+      }
+    ],
+    "functions": [],
+    "typealiases": [
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<SharedLoadingComponent>",
+        "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      },
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<SharedRootComponent>",
+        "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      }
+    ],
+    "enumerations": [],
+    "groupedVariables": {
+      "libs/shared-view/.storybook/main.ts": [
+        {
+          "name": "config",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/shared-view/.storybook/main.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "StorybookConfig",
+          "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n}"
+        }
+      ],
+      "libs/shared-view/src/lib/components/loading/loading.component.stories.ts": [
+        {
+          "name": "Heading",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {\n    linear: true,\n    loading: true,\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/loading works!/gi)).toBeTruthy();\n  },\n}"
+        },
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<SharedLoadingComponent>",
+          "defaultValue": "{\n  component: SharedLoadingComponent,\n  title: 'SharedLoadingComponent',\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {\n    linear: false,\n    loading: true,\n  },\n}"
+        }
+      ],
+      "libs/shared-view/src/lib/components/root/root.component.stories.ts": [
+        {
+          "name": "Heading",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/root works!/gi)).toBeTruthy();\n  },\n}"
+        },
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<SharedRootComponent>",
+          "defaultValue": "{\n  component: SharedRootComponent,\n  title: 'SharedRootComponent',\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {},\n}"
+        }
+      ]
+    },
+    "groupedFunctions": {},
+    "groupedEnumerations": {},
+    "groupedTypeAliases": {
+      "libs/shared-view/src/lib/components/loading/loading.component.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<SharedLoadingComponent>",
+          "file": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ],
+      "libs/shared-view/src/lib/components/root/root.component.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<SharedRootComponent>",
+          "file": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ]
+    }
+  },
+  "routes": [],
+  "coverage": {
+    "count": 0,
+    "status": "low",
+    "files": [
+      {
+        "filePath": "libs/shared-view/.storybook/main.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "config",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Heading",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/loading/loading.component.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/loading/loading.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "SharedLoadingComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/6",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Heading",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/root/root.component.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/shared-view/src/lib/components/root/root.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "SharedRootComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      }
+    ]
+  }
+}

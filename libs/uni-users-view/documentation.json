@@ -1,0 +1,357 @@
+{
+  "pipes": [],
+  "interfaces": [],
+  "injectables": [],
+  "guards": [],
+  "interceptors": [],
+  "classes": [],
+  "directives": [],
+  "components": [
+    {
+      "name": "UserListComponent",
+      "id": "component-UserListComponent-49b76e9aba9be1e32afce6a6956c4fca3d76f3d14f287995b99f407399b14750b042fa07acc522c88e57820f691fd905d986b4cf4ed49c8922dd0a7c4f4ebd8e",
+      "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.ts",
+      "changeDetection": "ChangeDetectionStrategy.OnPush",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "lib-user-list",
+      "styleUrls": [],
+      "styles": [],
+      "templateUrl": ["user-list.component.html"],
+      "viewProviders": [],
+      "hostDirectives": [],
+      "inputsClass": [
+        {
+          "name": "url",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "InputSignal<string>",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 23,
+          "required": true
+        }
+      ],
+      "outputsClass": [],
+      "propertiesClass": [
+        {
+          "name": "columns",
+          "defaultValue": "['position', ...this.dynamicColumns]",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string[]",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 27
+        },
+        {
+          "name": "dataStore",
+          "defaultValue": "inject(UserListDataStore)",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 30,
+          "modifierKind": [148]
+        },
+        {
+          "name": "dynamicColumns",
+          "defaultValue": "['firstName', 'lastName', 'age', 'address', 'more']",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "string[]",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 26
+        },
+        {
+          "name": "pageSizes",
+          "defaultValue": "input([5, 10, 25, 50, 100])",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "InputSignal<number[]>",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 24
+        },
+        {
+          "name": "uiStore",
+          "defaultValue": "inject(UserListUiStore)",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 29,
+          "modifierKind": [148]
+        },
+        {
+          "name": "url",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "InputSignal<string>",
+          "indexKey": "",
+          "optional": false,
+          "description": "",
+          "line": 23,
+          "required": true
+        }
+      ],
+      "methodsClass": [],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "standalone": true,
+      "imports": [
+        {
+          "name": "RouterLink"
+        },
+        {
+          "name": "FormsModule",
+          "type": "module"
+        },
+        {
+          "name": "MatFormFieldModule",
+          "type": "module"
+        },
+        {
+          "name": "MatInputModule",
+          "type": "module"
+        },
+        {
+          "name": "MatTableModule",
+          "type": "module"
+        },
+        {
+          "name": "MatPaginatorModule",
+          "type": "module"
+        },
+        {
+          "name": "MatSortModule",
+          "type": "module"
+        },
+        {
+          "name": "AddressPipe",
+          "type": "pipe"
+        }
+      ],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { Component, inject, ChangeDetectionStrategy, InputSignal, input, effect } from '@angular/core';\nimport { RouterLink } from '@angular/router';\nimport { FormsModule } from '@angular/forms';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatSortModule } from '@angular/material/sort';\n\nimport { UserListDataStore, UserListUiStore } from '@ng-nx/uni-users-data';\n\nimport { AddressPipe } from '../../pipes/address/address.pipe';\nimport { of } from 'rxjs';\n\n@Component({\n  selector: 'lib-user-list',\n  standalone: true,\n  imports: [RouterLink, FormsModule, MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule, AddressPipe],\n  templateUrl: 'user-list.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UserListComponent {\n  url: InputSignal<string> = input.required();\n  pageSizes: InputSignal<number[]> = input([5, 10, 25, 50, 100]);\n\n  dynamicColumns: string[] = ['firstName', 'lastName', 'age', 'address', 'more'];\n  columns: string[] = ['position', ...this.dynamicColumns];\n\n  readonly uiStore = inject(UserListUiStore);\n  readonly dataStore = inject(UserListDataStore);\n\n  constructor() {\n    //@TODO find a better solution\n    let search = this.uiStore.search();\n    let sort = this.uiStore.sort();\n\n    effect(\n      () => {\n        search = this.uiStore.search();\n        sort = this.uiStore.sort();\n\n        this.uiStore.updatePageIndex(0);\n      },\n      { allowSignalWrites: true }\n    );\n\n    effect(\n      () => {\n        this.dataStore.updateUrl(this.url());\n        this.dataStore.loadUsers(of({ search, sort, page: this.uiStore.page() }));\n      },\n      { allowSignalWrites: true }\n    );\n  }\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": "",
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "args": [],
+        "line": 30
+      },
+      "extends": [],
+      "templateData": "<form>\n  <mat-form-field>\n    <mat-label>Search for user(s)</mat-label>\n    <input matInput name=\"search\" type=\"text\" [ngModel]=\"uiStore.search()\" (ngModelChange)=\"uiStore.updateSearch($event)\" />\n  </mat-form-field>\n</form>\n\n<ng-content />\n\n<div class=\"mat-elevation-z8 max-h-[500px] overflow-auto\">\n  <table mat-table [dataSource]=\"dataStore.users()\" matSort (matSortChange)=\"uiStore.updateSort($event)\">\n    <!-- Position Column -->\n    <ng-container matColumnDef=\"position\">\n      <th mat-header-cell *matHeaderCellDef>#</th>\n      <td mat-cell *matCellDef=\"let data\" class=\"w-14\">{{ data.position }}</td>\n    </ng-container>\n\n    <!-- Dynamic Columns -->\n    @for (column of dynamicColumns; track column) {\n      <ng-container [matColumnDef]=\"column\">\n        @switch (column) {\n          @case ('address') {\n            <th mat-header-cell *matHeaderCellDef class=\"font-semibold capitalize\">{{ column }}</th>\n            <td mat-cell *matCellDef=\"let result\">{{ result[column] | address }}</td>\n          }\n          @case ('more') {\n            <th mat-header-cell *matHeaderCellDef></th>\n            <td mat-cell *matCellDef=\"let result\" class=\"w-14\">\n              <a [routerLink]=\"'/users/' + result.id\" class=\"block\">More...</a>\n            </td>\n          }\n          @default {\n            <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"font-semibold capitalize\">{{ column }}</th>\n            <td mat-cell *matCellDef=\"let result\">{{ result[column] }}</td>\n          }\n        }\n      </ng-container>\n    }\n\n    <tr mat-header-row *matHeaderRowDef=\"columns; sticky: true\"></tr>\n    <tr mat-row *matRowDef=\"let data; columns: columns\"></tr>\n  </table>\n</div>\n\n<mat-paginator\n  [pageSizeOptions]=\"pageSizes()\"\n  [pageIndex]=\"uiStore.page()?.pageIndex || 0\"\n  [showFirstLastButtons]=\"true\"\n  (page)=\"uiStore.updatePage($event)\"\n  [length]=\"dataStore.total()\"\n  aria-label=\"Users pagination\"\n/>\n"
+    }
+  ],
+  "modules": [],
+  "miscellaneous": {
+    "variables": [
+      {
+        "name": "config",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/uni-users-view/.storybook/main.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "StorybookConfig",
+        "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n}"
+      },
+      {
+        "name": "Heading",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\n  args: {\n    url: 'https://dummyjson.com/users/search',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/user-list works!/gi)).toBeTruthy();\n  },\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<UserListComponent>",
+        "defaultValue": "{\n  component: UserListComponent,\n  title: 'UserListComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [\n        provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),\n        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },\n      ],\n      providers: [HttpClient],\n    }),\n  ],\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\n  args: {\n    url: 'https://dummyjson.com/users/search',\n  },\n}"
+      }
+    ],
+    "functions": [],
+    "typealiases": [
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<UserListComponent>",
+        "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      }
+    ],
+    "enumerations": [],
+    "groupedVariables": {
+      "libs/uni-users-view/.storybook/main.ts": [
+        {
+          "name": "config",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/uni-users-view/.storybook/main.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "StorybookConfig",
+          "defaultValue": "{\n  stories: ['../**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n}"
+        }
+      ],
+      "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts": [
+        {
+          "name": "Heading",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {\n    url: 'https://dummyjson.com/users/search',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/user-list works!/gi)).toBeTruthy();\n  },\n}"
+        },
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<UserListComponent>",
+          "defaultValue": "{\n  component: UserListComponent,\n  title: 'UserListComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [\n        provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),\n        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },\n      ],\n      providers: [HttpClient],\n    }),\n  ],\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {\n    url: 'https://dummyjson.com/users/search',\n  },\n}"
+        }
+      ]
+    },
+    "groupedFunctions": {},
+    "groupedEnumerations": {},
+    "groupedTypeAliases": {
+      "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<UserListComponent>",
+          "file": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ]
+    }
+  },
+  "routes": [],
+  "coverage": {
+    "count": 0,
+    "status": "low",
+    "files": [
+      {
+        "filePath": "libs/uni-users-view/.storybook/main.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "config",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Heading",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/uni-users-view/src/lib/components/user-list/user-list.component.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "libs/uni-users-view/src/lib/components/user-list/user-list.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "UserListComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/9",
+        "status": "low"
+      }
+    ]
+  }
+}
