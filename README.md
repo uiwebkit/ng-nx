@@ -34,7 +34,7 @@ Create an Angular application with a page of users. On this page we see users, s
 Used https://dummyjson.com/docs/users as an API.
 
 - I placed everything in libraries and divided them to *-data and *-view.
-- All code (business logic) should be placed in *-data and *-view should be 'dump'
+- All code (business logic) should be placed in *-data and *-view should be 'dummy'
 - Enable SSR and SSG for first page faster loading
 - All components are standalone and are lazy loaded in app level
 - Angular Material as components library (why? - official, the best)
