@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { ExtendedUser, User, UsersResponse } from '../../models/interfaces/user.interface';
 import { UsersQueryParams } from '../../models/interfaces/users-query-params.interface';
-import { UserListUIState } from '../../models/interfaces/user-list-state.interface';
+import { UserListUIParams } from '../../models/interfaces/user-list-state.interface';
 
 @Injectable({ providedIn: 'root' })
 export class UserListService {
@@ -19,14 +19,18 @@ export class UserListService {
     return value ? { [prop]: value } : {};
   }
 
-  getOptions(params: UserListUIState): UsersQueryParams {
+  getOptions(params: UserListUIParams): UsersQueryParams {
+    const { search, sort, page } = params;
+    const { pageSize, pageIndex } = page;
+    const { active, direction } = sort || {};
+
     return {
       select: 'id,firstName,lastName,age,address',
-      limit: params.page?.pageSize || 5,
-      skip: this.getOffset(params.page?.pageIndex, params.page?.pageSize),
-      ...this.getOptionalProp('sortBy', params.sort?.active),
-      ...this.getOptionalProp('order', params.sort?.direction),
-      ...this.getOptionalProp('q', params.search),
+      limit: pageSize || 5,
+      skip: this.getOffset(pageIndex, pageSize),
+      ...this.getOptionalProp('sortBy', active),
+      ...this.getOptionalProp('order', direction),
+      ...this.getOptionalProp('q', search),
     };
   }
 

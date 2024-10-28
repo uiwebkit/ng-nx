@@ -1,14 +1,14 @@
 <form>
   <mat-form-field>
     <mat-label>Search for user(s)</mat-label>
-    <input matInput name="search" type="text" [ngModel]="uiStore.search()" (ngModelChange)="uiStore.updateSearch($event)" />
+    <input matInput name="search" type="text" [ngModel]="uiStore.search()" (ngModelChange)="viewStore.onSearchChange($event)" />
   </mat-form-field>
 </form>
 
 <ng-content />
 
 <div class="mat-elevation-z8 max-h-[500px] overflow-auto">
-  <table mat-table [dataSource]="dataStore.users()" matSort (matSortChange)="uiStore.updateSort($event)">
+  <table mat-table [dataSource]="dataStore.users()" matSort (matSortChange)="viewStore.onSortChange($event)">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef>#</th>
@@ -16,18 +16,12 @@
     </ng-container>
 
     <!-- Dynamic Columns -->
-    @for (column of dynamicColumns; track column) {
+    @for (column of uiStore.dynamicColumns(); track column) {
       <ng-container [matColumnDef]="column">
         @switch (column) {
           @case ('address') {
             <th mat-header-cell *matHeaderCellDef class="font-semibold capitalize">{{ column }}</th>
             <td mat-cell *matCellDef="let result">{{ result[column] | address }}</td>
-          }
-          @case ('more') {
-            <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let result" class="w-14">
-              <a [routerLink]="'/users/' + result.id" class="block">More...</a>
-            </td>
           }
           @default {
             <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-semibold capitalize">{{ column }}</th>
@@ -37,16 +31,24 @@
       </ng-container>
     }
 
-    <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
-    <tr mat-row *matRowDef="let data; columns: columns"></tr>
+    <!-- More Column -->
+    <ng-container matColumnDef="more">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let data" class="w-14">
+        <a [routerLink]="'/users/' + data.id" class="block">More...</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="uiStore.columns(); sticky: true"></tr>
+    <tr mat-row *matRowDef="let data; columns: uiStore.columns()"></tr>
   </table>
 </div>
 
 <mat-paginator
   [pageSizeOptions]="pageSizes()"
-  [pageIndex]="uiStore.page()?.pageIndex || 0"
+  [pageIndex]="uiStore.page().pageIndex || 0"
   [showFirstLastButtons]="true"
-  (page)="uiStore.updatePage($event)"
+  (page)="viewStore.onPageChange($event)"
   [length]="dataStore.total()"
   aria-label="Users pagination"
 />

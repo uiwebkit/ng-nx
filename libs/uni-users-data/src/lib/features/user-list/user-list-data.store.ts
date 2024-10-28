@@ -2,17 +2,17 @@ import { inject } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { debounceTime, distinctUntilChanged, map, pipe, switchMap } from 'rxjs';
+import { debounceTime, map, pipe, switchMap } from 'rxjs';
 
-import { errorHandler } from '@ng-nx/common-data';
+import { errorHandler, RequestParams } from '@ng-nx/common-data';
 
-import { UserListDataState, UserListUIState } from '../../models/interfaces/user-list-state.interface';
+import { UserListDataState } from '../../models/interfaces/user-list-state.interface';
 import { UsersQueryParams } from '../../models/interfaces/users-query-params.interface';
 import { ExtendedUser, UsersResponse } from '../../models/interfaces/user.interface';
 import { UserListService } from './user-list.service';
+import { UserListUiStore } from './user-list-ui.store';
 
 const initialState: UserListDataState = {
-  url: '',
   total: 0,
   users: new MatTableDataSource<ExtendedUser>([]),
 };
@@ -20,23 +20,21 @@ const initialState: UserListDataState = {
 export const UserListDataStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
-  withMethods((store, userListService = inject(UserListService)) => ({
-    updateUrl(url: string): void {
-      patchState(store, { url });
-    },
-    loadUsers: rxMethod<UserListUIState>(
+  withMethods((store, userListService = inject(UserListService), uiStore = inject(UserListUiStore)) => ({
+    loadUsers: rxMethod<string>(
       pipe(
-        debounceTime(300),
-        distinctUntilChanged(),
-        map((params: UserListUIState) => userListService.getOptions(params)),
-        switchMap((query: UsersQueryParams) => userListService.loadUsers(store.url(), query)),
+        debounceTime(500),
+        map((url: string): RequestParams<UsersQueryParams> => ({ url, query: userListService.getOptions({
+          search: uiStore.search(),
+          sort: uiStore.sort(),
+          page: uiStore.page(),
+        })})),
+        switchMap((req: RequestParams<UsersQueryParams>) => userListService.loadUsers(req.url, req.query)),
         errorHandler<UsersResponse>('LOAD_USERS'),
-        map((data: UsersResponse) =>
-          patchState(store, {
-            total: data.total,
-            users: userListService.mapUsers(data),
-          })
-        )
+        map((data: UsersResponse) => patchState(store, {
+          total: data.total,
+          users: userListService.mapUsers(data),
+        }))
       )
     ),
   }))

@@ -3,14 +3,17 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Sort } from '@angular/material/sort';
 import { PageEvent } from '@angular/material/paginator';
 
-export interface UserListUIState {
+export interface UserListUIParams {
   search: string;
   sort: Sort | null;
-  page: PageEvent | null;
+  page: PageEvent;
+}
+
+export interface UserListUIState extends UserListUIParams {
+  dynamicColumns: string[];
 }
 
 export interface UserListDataState {
-  url: string;
   total: number;
   users: MatTableDataSource<ExtendedUser>;
 }
