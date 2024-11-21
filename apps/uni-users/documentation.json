@@ -1,608 +1,610 @@
 {
-  "pipes": [],
-  "interfaces": [],
-  "injectables": [],
-  "guards": [],
-  "interceptors": [],
-  "classes": [],
-  "directives": [],
-  "components": [
-    {
-      "name": "AppComponent",
-      "id": "component-AppComponent-3b513fefa5e5beedeb849ba7b15efe3dcddb371a35b4a9583ddee0e1d0e8d71697a19d64ef4c8f874ff948f22e1bd1e61f362c46a5f946daf2c1d2e2e2bf3a31",
-      "file": "apps/uni-users/src/app/containers/app/app.component.ts",
-      "changeDetection": "ChangeDetectionStrategy.OnPush",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-contained",
-      "styleUrls": [],
-      "styles": [],
-      "template": "<lib-shared-loader />\n\n<main class=\"container py-3\">\n  <router-outlet />\n</main>\n",
-      "templateUrl": [],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [],
-      "outputsClass": [],
-      "propertiesClass": [],
-      "methodsClass": [],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
         {
-          "name": "RouterOutlet"
+            "name": "AppComponent",
+            "id": "component-AppComponent-72ce6f163c127d15e2349f8fe3131e989f49c8a25915b29eefb2dc89ee9a918f4995f2b314b3c352f19e8f2d98963703536fb26fc191e3355bc46e84d51c3710",
+            "file": "apps/uni-users/src/app/containers/app/app.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-contained",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<lib-shared-loader />\n\n<main class=\"container py-3\">\n  <router-outlet />\n</main>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "SharedLoadingComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\nimport { SharedLoadingComponent } from '@ng-nx/shared-view';\r\n\r\n@Component({\r\n  selector: 'app-contained',\r\n  standalone: true,\r\n  imports: [RouterOutlet, SharedLoadingComponent],\r\n  template: `\r\n    <lib-shared-loader />\r\n\r\n    <main class=\"container py-3\">\r\n      <router-outlet />\r\n    </main>\r\n  `,\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class AppComponent {}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
-          "name": "SharedLoadingComponent",
-          "type": "component"
-        }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\nimport { SharedLoadingComponent } from '@ng-nx/shared-view';\n\n@Component({\n  selector: 'app-contained',\n  standalone: true,\n  imports: [RouterOutlet, SharedLoadingComponent],\n  template: `\n    <lib-shared-loader />\n\n    <main class=\"container py-3\">\n      <router-outlet />\n    </main>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class AppComponent {}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": []
-    },
-    {
-      "name": "AppUserComponent",
-      "id": "component-AppUserComponent-66cc8c01fe4e255ec366043a482cbeff3833e93b596a18cecc7d7f97e4fcddeea6710785a041620a73a7e06823e57e7016b8b238c11581e7348c5f59fb1a894d",
-      "file": "apps/uni-users/src/app/pages/user/user.component.ts",
-      "changeDetection": "ChangeDetectionStrategy.OnPush",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-user",
-      "styleUrls": [],
-      "styles": [],
-      "template": "<a [routerLink]=\"'/users'\" class=\"block\">< Back</a>",
-      "templateUrl": [],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [],
-      "outputsClass": [],
-      "propertiesClass": [],
-      "methodsClass": [],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
+            "name": "AppUserComponent",
+            "id": "component-AppUserComponent-7464e93b36040545b8e00336772e3b2ff3a0a66fe4282167a027e04e5fddccb9712c54a302b094aa1bbe45f334709e5b56a16668b56dae1c9b06ffd5f7b790f7",
+            "file": "apps/uni-users/src/app/pages/user/user.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-user",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<a [routerLink]=\"'/users'\" class=\"block\">< Back</a>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterLink"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\nimport { RouterLink } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-user',\r\n  standalone: true,\r\n  imports: [RouterLink],\r\n  template: '<a [routerLink]=\"\\'/users\\'\" class=\"block\">< Back</a>',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class AppUserComponent {}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
         {
-          "name": "RouterLink"
+            "name": "AppUsersComponent",
+            "id": "component-AppUsersComponent-b058220ca46bbc794a7188290219496930fb224b1041d1cdc5e65d0aff508d45ff0e746092f9205c60cb9434dc251eab1b9b1c5031f1330f4518296eeddcc481",
+            "file": "apps/uni-users/src/app/pages/users/users.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-users",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<lib-user-list [url]=\"env.users\" [pageSizes]=\"[5, 10, 50, 100, 1000]\">custom slot</lib-user-list>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "env",
+                    "defaultValue": "env",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Env",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "UserListComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\nimport { UserListComponent } from '@ng-nx/uni-users-view';\r\n\r\nimport { env } from '../../../environments/environment';\r\nimport { Env } from '../../../environments/env.interface';\r\n\r\n@Component({\r\n  selector: 'app-users',\r\n  standalone: true,\r\n  imports: [UserListComponent],\r\n  template: '<lib-user-list [url]=\"env.users\" [pageSizes]=\"[5, 10, 50, 100, 1000]\">custom slot</lib-user-list>',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class AppUsersComponent {\r\n  readonly env: Env = env;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { RouterLink } from '@angular/router';\n\n@Component({\n  selector: 'app-user',\n  standalone: true,\n  imports: [RouterLink],\n  template: '<a [routerLink]=\"\\'/users\\'\" class=\"block\">< Back</a>',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class AppUserComponent {}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": []
-    },
-    {
-      "name": "AppUsersComponent",
-      "id": "component-AppUsersComponent-be4b59ef3312608b33e7a02a20b672e684151846ccdffb5f766fbe5f2c01c8e927e3b21437b0ce2c1ffbb57eec99849460027d866495b2775eb7472f0b20c932",
-      "file": "apps/uni-users/src/app/pages/users/users.component.ts",
-      "changeDetection": "ChangeDetectionStrategy.OnPush",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-users",
-      "styleUrls": [],
-      "styles": [],
-      "template": "<lib-user-list [url]=\"env.users\" [pageSizes]=\"[5, 10, 50, 100, 1000]\">custom slot</lib-user-list>",
-      "templateUrl": [],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [],
-      "outputsClass": [],
-      "propertiesClass": [
-        {
-          "name": "env",
-          "defaultValue": "env",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Env",
-          "indexKey": "",
-          "optional": false,
-          "description": "",
-          "line": 16,
-          "modifierKind": [148]
-        }
-      ],
-      "methodsClass": [],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
-        {
-          "name": "UserListComponent",
-          "type": "component"
-        }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { UserListComponent } from '@ng-nx/uni-users-view';\n\nimport { env } from '../../../environments/environment';\nimport { Env } from '../../../environments/env.interface';\n\n@Component({\n  selector: 'app-users',\n  standalone: true,\n  imports: [UserListComponent],\n  template: '<lib-user-list [url]=\"env.users\" [pageSizes]=\"[5, 10, 50, 100, 1000]\">custom slot</lib-user-list>',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class AppUsersComponent {\n  readonly env: Env = env;\n}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": []
-    }
-  ],
-  "modules": [],
-  "miscellaneous": {
-    "variables": [
-      {
-        "name": "config",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/.storybook/main.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "StorybookConfig",
-        "defaultValue": "{\n  stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n}"
-      },
-      {
-        "name": "Heading",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/app works!/gi)).toBeTruthy();\n  },\n}"
-      },
-      {
-        "name": "Heading",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/users works!/gi)).toBeTruthy();\n  },\n}"
-      },
-      {
-        "name": "Heading",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/user works!/gi)).toBeTruthy();\n  },\n}"
-      },
-      {
-        "name": "meta",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Meta<AppComponent>",
-        "defaultValue": "{\n  component: AppComponent,\n  title: 'AppComponent',\n}"
-      },
-      {
-        "name": "meta",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Meta<AppUsersComponent>",
-        "defaultValue": "{\n  component: AppUsersComponent,\n  title: 'AppUsersComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [\n        provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),\n        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },\n      ],\n      providers: [HttpClient],\n    }),\n  ],\n}"
-      },
-      {
-        "name": "meta",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Meta<AppUserComponent>",
-        "defaultValue": "{\n  component: AppUserComponent,\n  title: 'AppUserComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor]))],\n    }),\n  ],\n}"
-      },
-      {
-        "name": "Primary",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {},\n}"
-      },
-      {
-        "name": "Primary",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {},\n}"
-      },
-      {
-        "name": "Primary",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {},\n}"
-      }
     ],
-    "functions": [],
-    "typealiases": [
-      {
-        "name": "Story",
-        "ctype": "miscellaneous",
-        "subtype": "typealias",
-        "rawtype": "StoryObj<AppComponent>",
-        "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "description": "",
-        "kind": 183
-      },
-      {
-        "name": "Story",
-        "ctype": "miscellaneous",
-        "subtype": "typealias",
-        "rawtype": "StoryObj<AppUsersComponent>",
-        "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "description": "",
-        "kind": 183
-      },
-      {
-        "name": "Story",
-        "ctype": "miscellaneous",
-        "subtype": "typealias",
-        "rawtype": "StoryObj<AppUserComponent>",
-        "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "description": "",
-        "kind": 183
-      }
-    ],
-    "enumerations": [],
-    "groupedVariables": {
-      "apps/uni-users/.storybook/main.ts": [
-        {
-          "name": "config",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/.storybook/main.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "StorybookConfig",
-          "defaultValue": "{\n  stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n}"
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/.storybook/main.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StorybookConfig",
+                "defaultValue": "{\r\n  stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {},\r\n  },\r\n  docs: {\r\n    autodocs: true,\r\n    defaultName: 'Docs',\r\n  },\r\n}"
+            },
+            {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    expect(canvas.getByText(/app works!/gi)).toBeTruthy();\r\n  },\r\n}"
+            },
+            {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    expect(canvas.getByText(/user works!/gi)).toBeTruthy();\r\n  },\r\n}"
+            },
+            {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    expect(canvas.getByText(/users works!/gi)).toBeTruthy();\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AppComponent>",
+                "defaultValue": "{\r\n  component: AppComponent,\r\n  title: 'AppComponent',\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AppUserComponent>",
+                "defaultValue": "{\r\n  component: AppUserComponent,\r\n  title: 'AppUserComponent',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor]))],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AppUsersComponent>",
+                "defaultValue": "{\r\n  component: AppUsersComponent,\r\n  title: 'AppUsersComponent',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),\r\n        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },\r\n      ],\r\n      providers: [HttpClient],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AppComponent>",
+                "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AppUserComponent>",
+                "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AppUsersComponent>",
+                "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "apps/uni-users/.storybook/main.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/.storybook/main.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StorybookConfig",
+                    "defaultValue": "{\r\n  stories: ['../src/app/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],\r\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],\r\n  framework: {\r\n    name: '@storybook/angular',\r\n    options: {},\r\n  },\r\n  docs: {\r\n    autodocs: true,\r\n    defaultName: 'Docs',\r\n  },\r\n}"
+                }
+            ],
+            "apps/uni-users/src/app/containers/app/app.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    expect(canvas.getByText(/app works!/gi)).toBeTruthy();\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AppComponent>",
+                    "defaultValue": "{\r\n  component: AppComponent,\r\n  title: 'AppComponent',\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n}"
+                }
+            ],
+            "apps/uni-users/src/app/pages/user/user.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    expect(canvas.getByText(/user works!/gi)).toBeTruthy();\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AppUserComponent>",
+                    "defaultValue": "{\r\n  component: AppUserComponent,\r\n  title: 'AppUserComponent',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor]))],\r\n    }),\r\n  ],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n}"
+                }
+            ],
+            "apps/uni-users/src/app/pages/users/users.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    expect(canvas.getByText(/users works!/gi)).toBeTruthy();\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AppUsersComponent>",
+                    "defaultValue": "{\r\n  component: AppUsersComponent,\r\n  title: 'AppUsersComponent',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),\r\n        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },\r\n      ],\r\n      providers: [HttpClient],\r\n    }),\r\n  ],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "apps/uni-users/src/app/containers/app/app.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AppComponent>",
+                    "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "apps/uni-users/src/app/pages/user/user.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AppUserComponent>",
+                    "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "apps/uni-users/src/app/pages/users/users.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AppUsersComponent>",
+                    "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
         }
-      ],
-      "apps/uni-users/src/app/containers/app/app.component.stories.ts": [
-        {
-          "name": "Heading",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/app works!/gi)).toBeTruthy();\n  },\n}"
-        },
-        {
-          "name": "meta",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Meta<AppComponent>",
-          "defaultValue": "{\n  component: AppComponent,\n  title: 'AppComponent',\n}"
-        },
-        {
-          "name": "Primary",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {},\n}"
-        }
-      ],
-      "apps/uni-users/src/app/pages/users/users.component.stories.ts": [
-        {
-          "name": "Heading",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/users works!/gi)).toBeTruthy();\n  },\n}"
-        },
-        {
-          "name": "meta",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Meta<AppUsersComponent>",
-          "defaultValue": "{\n  component: AppUsersComponent,\n  title: 'AppUsersComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [\n        provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),\n        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },\n      ],\n      providers: [HttpClient],\n    }),\n  ],\n}"
-        },
-        {
-          "name": "Primary",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {},\n}"
-        }
-      ],
-      "apps/uni-users/src/app/pages/user/user.component.stories.ts": [
-        {
-          "name": "Heading",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/user works!/gi)).toBeTruthy();\n  },\n}"
-        },
-        {
-          "name": "meta",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Meta<AppUserComponent>",
-          "defaultValue": "{\n  component: AppUserComponent,\n  title: 'AppUserComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor]))],\n    }),\n  ],\n}"
-        },
-        {
-          "name": "Primary",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {},\n}"
-        }
-      ]
     },
-    "groupedFunctions": {},
-    "groupedEnumerations": {},
-    "groupedTypeAliases": {
-      "apps/uni-users/src/app/containers/app/app.component.stories.ts": [
-        {
-          "name": "Story",
-          "ctype": "miscellaneous",
-          "subtype": "typealias",
-          "rawtype": "StoryObj<AppComponent>",
-          "file": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "description": "",
-          "kind": 183
-        }
-      ],
-      "apps/uni-users/src/app/pages/users/users.component.stories.ts": [
-        {
-          "name": "Story",
-          "ctype": "miscellaneous",
-          "subtype": "typealias",
-          "rawtype": "StoryObj<AppUsersComponent>",
-          "file": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "description": "",
-          "kind": 183
-        }
-      ],
-      "apps/uni-users/src/app/pages/user/user.component.stories.ts": [
-        {
-          "name": "Story",
-          "ctype": "miscellaneous",
-          "subtype": "typealias",
-          "rawtype": "StoryObj<AppUserComponent>",
-          "file": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "description": "",
-          "kind": 183
-        }
-      ]
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "apps/uni-users/.storybook/main.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/containers/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/user/user.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppUserComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/uni-users/src/app/pages/users/users.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppUsersComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
     }
-  },
-  "routes": [],
-  "coverage": {
-    "count": 0,
-    "status": "low",
-    "files": [
-      {
-        "filePath": "apps/uni-users/.storybook/main.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "config",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Heading",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "meta",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Primary",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/containers/app/app.component.stories.ts",
-        "type": "type alias",
-        "linktype": "miscellaneous",
-        "linksubtype": "typealias",
-        "name": "Story",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/containers/app/app.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "AppComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Heading",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "meta",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Primary",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/user/user.component.stories.ts",
-        "type": "type alias",
-        "linktype": "miscellaneous",
-        "linksubtype": "typealias",
-        "name": "Story",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/user/user.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "AppUserComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Heading",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "meta",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Primary",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/users/users.component.stories.ts",
-        "type": "type alias",
-        "linktype": "miscellaneous",
-        "linksubtype": "typealias",
-        "name": "Story",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "apps/uni-users/src/app/pages/users/users.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "AppUsersComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/2",
-        "status": "low"
-      }
-    ]
-  }
 }

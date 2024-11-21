@@ -12,7 +12,7 @@ E2E setup in progress ...
 
 ## Important
 
-This task may not be 100% yours. I would gladly spend many hours doing exactly your task, but I decided to do it once for everyone who wants to appreciate my skills. Thank you for understanding!
+This task may not be 100% yours. I decided to do it once for everyone who wants to appreciate my skills. Thank you for understanding!
 
 ## Task Description
 
