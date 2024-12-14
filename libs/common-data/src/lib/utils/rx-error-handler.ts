@@ -1,5 +1,11 @@
 import { catchError, filter, of, Observable } from 'rxjs';
 
+export interface Aaa {
+  a: number;
+}
+
+export type B = object | string;
+
 export const errorHandler =
   <Type>(name?: string) =>
   (source: Observable<Type>) =>
