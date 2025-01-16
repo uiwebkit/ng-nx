@@ -1,18 +1,6 @@
 # NgNx
 
-Still far from ideal!
-
-Documentation in progress ...
-
-Storybook setup in progress ...
-
-Unit tests in progress ...
-
-E2E setup in progress ...
-
-## Important
-
-This task may not be 100% yours. I decided to do it once for everyone who wants to appreciate my skills. Thank you for understanding!
+I decided to do it for everyone who wants to appreciate my skills. Thank you!
 
 ## Task Description
 
