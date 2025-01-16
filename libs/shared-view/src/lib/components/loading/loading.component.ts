@@ -38,7 +38,8 @@ import { UniLoadingService } from '@ng-nx/common-data';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SharedLoadingComponent {
-  readonly store = inject(UniLoadingService);
+
+  readonly store: UniLoadingService = inject(UniLoadingService);
 
   linear: InputSignal<boolean> = input(false);
   loading: InputSignal<boolean> = input(false);

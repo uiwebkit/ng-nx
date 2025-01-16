@@ -17,7 +17,7 @@ const initialState: UserListUIState = {
 };
 
 export const UserListUiStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root' }, // to save state after back navigation
   withState(initialState),
   withComputed(({ dynamicColumns }) => ({
     columns: computed(() => ['position', ...dynamicColumns(), 'more']),

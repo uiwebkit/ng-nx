@@ -5,13 +5,13 @@ import { finalize, Observable } from 'rxjs';
 import { UniLoadingService } from './loading.service';
 
 export function uniLoadingInterceptor(request: HttpRequest<unknown>, next: HttpHandlerFn): Observable<HttpEvent<unknown>> {
-  const loadingService = inject(UniLoadingService);
+  const loadingService: UniLoadingService = inject(UniLoadingService);
 
   loadingService.totalRequests++;
   loadingService.setLoading(true);
 
   return next(request).pipe(
-    finalize(() => {
+    finalize((): void => {
       loadingService.totalRequests--;
 
       if (loadingService.totalRequests === 0) {

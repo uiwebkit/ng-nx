@@ -6,14 +6,18 @@ import { SharedCalendarComponent } from '@ng-nx/shared-view';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [RouterLink, SharedCalendarComponent],
+  imports: [
+    RouterLink,
+    SharedCalendarComponent,
+  ],
   template: `
     <a [routerLink]="'/users'" class="block">< Back</a>
 
     <p class="pt-3">Calendar Test</p>
 
-    <lib-shared-calendar [year]="2024" [month]="11" />
+    <lib-shared-calendar [year]="2025" [month]="1" />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppUserComponent {}
+export class AppUserComponent {
+}

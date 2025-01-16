@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SharedLoadingComponent } from './loading.component';
 
-describe('SharedLoadingComponent', () => {
+describe('SharedLoadingComponent', (): void => {
   let component: SharedLoadingComponent;
   let fixture: ComponentFixture<SharedLoadingComponent>;
 
@@ -16,7 +16,7 @@ describe('SharedLoadingComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });

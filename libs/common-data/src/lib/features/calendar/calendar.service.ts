@@ -14,10 +14,10 @@ export class UniCalendarService {
   }
 
   getMonthlyDaysOffset(indexFirstDayOfWeek: number): Array<0> {
-    return [...Array(indexFirstDayOfWeek).keys()].map(_ => 0);
+    return [...Array(indexFirstDayOfWeek)].map(_ => 0);
   }
 
   getDaysOfMonth(daysInMonth: number): Array<DayNumber> {
-    return [...Array(daysInMonth).keys()].map(i=> i + 1) as Array<DayNumber>;
+    return [...Array(daysInMonth).keys()].map((i: number) => i + 1) as DayNumber[];
   }
 }

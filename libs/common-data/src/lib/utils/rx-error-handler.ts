@@ -1,18 +1,12 @@
 import { catchError, filter, of, Observable } from 'rxjs';
 
-export interface Aaa {
-  a: number;
-}
-
-export type B = object | string;
-
 export const errorHandler =
   <Type>(name?: string) =>
-  (source: Observable<Type>) =>
-    source.pipe(
-      catchError(error => {
+    (source: Observable<Type>) => source.pipe(
+      catchError((error: unknown): Observable<null> => {
         console.error(`Error in: ${name}`, error);
+
         return of(null);
       }),
-      filter(src => !!src)
-    ) as Observable<Type>;
+      filter((src: Type | null) => src !== null),
+    );

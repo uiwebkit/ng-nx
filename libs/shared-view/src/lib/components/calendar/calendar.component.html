@@ -2,22 +2,22 @@
   <mat-form-field class="w-24 mr-2">
     <mat-label>Year</mat-label>
     <input matInput name="year" type="number" [min]="32" [max]="3000"
-           [ngModel]="calendarStore.year()" (ngModelChange)="calendarStore.updateYear($event)" />
+           [ngModel]="storeYear()" (ngModelChange)="updateYearStore($event)" />
   </mat-form-field>
 
   <mat-form-field class="w-24">
     <mat-label>Month</mat-label>
     <input matInput name="month" type="number" [min]="1" [max]="12"
-           [ngModel]="calendarStore.month()" (ngModelChange)="calendarStore.updateMonth($event)" />
+           [ngModel]="storeMonth()" (ngModelChange)="updateMonthStore($event)" />
   </mat-form-field>
 </form>
 
 <div class="grid grid-cols-7 w-40">
-  @for (dayOfWeek of calendarStore.daysOfWeek(); track $index) {
+  @for (dayOfWeek of storeDaysOfWeek(); track $index) {
     <strong>{{ dayOfWeek }}</strong>
   }
 
-  @for (dayOfMonth of calendarStore.datesOfMonth(); track $index) {
+  @for (dayOfMonth of storeDatesOfMonth(); track $index) {
     <div>{{ dayOfMonth || '' }}</div>
   }
 </div>

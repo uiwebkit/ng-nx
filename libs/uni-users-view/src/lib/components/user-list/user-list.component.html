@@ -1,14 +1,15 @@
 <form>
   <mat-form-field>
     <mat-label>Search for user(s)</mat-label>
-    <input matInput name="search" type="text" [ngModel]="uiStore.search()" (ngModelChange)="viewStore.onSearchChange($event)" />
+    <input matInput name="search" type="text" [ngModel]="uiStoreSearch()"
+           (ngModelChange)="onSearchChangeStore($event)" />
   </mat-form-field>
 </form>
 
 <ng-content />
 
 <div class="mat-elevation-z8 max-h-[500px] overflow-auto">
-  <table mat-table [dataSource]="dataStore.users()" matSort (matSortChange)="viewStore.onSortChange($event)">
+  <table mat-table [dataSource]="dataStoreUsers()" matSort (matSortChange)="onSortChangeStore($event)">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef>#</th>
@@ -16,7 +17,7 @@
     </ng-container>
 
     <!-- Dynamic Columns -->
-    @for (column of uiStore.dynamicColumns(); track column) {
+    @for (column of uiStoreDynamicColumns(); track column) {
       <ng-container [matColumnDef]="column">
         @switch (column) {
           @case ('address') {
@@ -39,16 +40,16 @@
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="uiStore.columns(); sticky: true"></tr>
-    <tr mat-row *matRowDef="let data; columns: uiStore.columns()"></tr>
+    <tr mat-header-row *matHeaderRowDef="uiStoreColumns(); sticky: true"></tr>
+    <tr mat-row *matRowDef="let data; columns: uiStoreColumns()"></tr>
   </table>
 </div>
 
 <mat-paginator
   [pageSizeOptions]="pageSizes()"
-  [pageIndex]="uiStore.page().pageIndex || 0"
+  [pageIndex]="uiStorePage().pageIndex || 0"
   [showFirstLastButtons]="true"
-  (page)="viewStore.onPageChange($event)"
-  [length]="dataStore.total()"
+  (page)="onPageChangeStore($event)"
+  [length]="dataStoreTotal()"
   aria-label="Users pagination"
 />

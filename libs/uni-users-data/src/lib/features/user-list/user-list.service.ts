@@ -9,7 +9,9 @@ import { UserListUIParams } from '../../models/interfaces/user-list-state.interf
 
 @Injectable({ providedIn: 'root' })
 export class UserListService {
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) {
+  }
 
   getOffset(pageIndex = 0, pageSize = 5): number {
     return pageIndex * pageSize;
@@ -44,8 +46,8 @@ export class UserListService {
         (user: User, index: number): ExtendedUser => ({
           position: data.skip + 1 + index,
           ...user,
-        })
-      )
+        }),
+      ),
     );
   }
 }

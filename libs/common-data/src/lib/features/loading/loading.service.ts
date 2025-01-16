@@ -2,6 +2,7 @@ import { Injectable, signal, WritableSignal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class UniLoadingService {
+
   totalRequests = 0;
   isLoading: WritableSignal<boolean> = signal(false);
 

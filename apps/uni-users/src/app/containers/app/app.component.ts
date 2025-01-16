@@ -6,7 +6,10 @@ import { SharedLoadingComponent } from '@ng-nx/shared-view';
 @Component({
   selector: 'app-contained',
   standalone: true,
-  imports: [RouterOutlet, SharedLoadingComponent],
+  imports: [
+    RouterOutlet,
+    SharedLoadingComponent,
+  ],
   template: `
     <lib-shared-loader />
 
@@ -16,4 +19,5 @@ import { SharedLoadingComponent } from '@ng-nx/shared-view';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+}

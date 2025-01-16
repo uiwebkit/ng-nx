@@ -1,11 +1,12 @@
+import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
-import { UserListComponent } from './user-list.component';
-
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-import { HttpClient, provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+
 import { uniLoadingInterceptor } from '@ng-nx/common-data';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+
+import { UserListComponent } from './user-list.component';
 
 const meta: Meta<UserListComponent> = {
   component: UserListComponent,
@@ -14,7 +15,10 @@ const meta: Meta<UserListComponent> = {
     moduleMetadata({
       imports: [
         provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),
-        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
+        {
+          provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+          useValue: { appearance: 'outline' }
+        },
       ],
       providers: [HttpClient],
     }),
@@ -33,7 +37,7 @@ export const Heading: Story = {
   args: {
     url: 'https://dummyjson.com/users/search',
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }): Promise<void> => {
     const canvas = within(canvasElement);
     expect(canvas.getByText(/user-list works!/gi)).toBeTruthy();
   },

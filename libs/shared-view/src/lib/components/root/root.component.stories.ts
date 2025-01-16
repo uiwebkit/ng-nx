@@ -17,8 +17,9 @@ export const Primary: Story = {
 
 export const Heading: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }): Promise<void> => {
     const canvas = within(canvasElement);
+
     expect(canvas.getByText(/root works!/gi)).toBeTruthy();
   },
 };

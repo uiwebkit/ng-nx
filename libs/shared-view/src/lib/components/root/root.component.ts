@@ -8,4 +8,5 @@ import { RouterOutlet } from '@angular/router';
   template: '<router-outlet />',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SharedRootComponent {}
+export class SharedRootComponent {
+}

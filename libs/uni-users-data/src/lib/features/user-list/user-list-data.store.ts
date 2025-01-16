@@ -18,7 +18,7 @@ const initialState: UserListDataState = {
 };
 
 export const UserListDataStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root' }, // to save state after back navigation
   withState(initialState),
   withMethods((store, userListService = inject(UserListService), uiStore = inject(UserListUiStore)) => ({
     loadUsers: rxMethod<string>(

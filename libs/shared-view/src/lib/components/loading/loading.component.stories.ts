@@ -23,8 +23,9 @@ export const Heading: Story = {
     linear: true,
     loading: true,
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }): Promise<void> => {
     const canvas = within(canvasElement);
+
     expect(canvas.getByText(/loading works!/gi)).toBeTruthy();
   },
 };

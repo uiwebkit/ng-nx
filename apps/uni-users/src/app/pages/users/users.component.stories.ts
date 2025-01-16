@@ -15,7 +15,10 @@ const meta: Meta<AppUsersComponent> = {
     moduleMetadata({
       imports: [
         provideHttpClient(withFetch(), withInterceptors([uniLoadingInterceptor])),
-        { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
+        {
+          provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+          useValue: { appearance: 'outline' }
+        },
       ],
       providers: [HttpClient],
     }),
@@ -30,7 +33,7 @@ export const Primary: Story = {
 
 export const Heading: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }): Promise<void> => {
     const canvas = within(canvasElement);
     expect(canvas.getByText(/users works!/gi)).toBeTruthy();
   },
