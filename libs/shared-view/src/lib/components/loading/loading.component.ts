@@ -6,7 +6,6 @@ import { UniLoadingService } from '@ng-nx/common-data';
 
 @Component({
   selector: 'lib-shared-loader',
-  standalone: true,
   imports: [MatProgressBarModule, MatProgressSpinnerModule],
   template: `
     @if (store.isLoading() || loading()) {

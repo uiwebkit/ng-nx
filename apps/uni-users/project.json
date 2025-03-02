@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/uni-users",
         "index": "apps/uni-users/src/index.html",
         "browser": "apps/uni-users/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/uni-users/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -22,13 +26,17 @@
             "input": "apps/uni-users/public"
           }
         ],
-        "styles": ["@angular/material/prebuilt-themes/azure-blue.css", "apps/uni-users/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
+          "apps/uni-users/src/styles.scss"
+        ],
         "scripts": [],
         "server": "apps/uni-users/src/main.server.ts",
         "prerender": true,
         "ssr": {
           "entry": "apps/uni-users/server.ts"
-        }
+        },
+        "outputMode": "server"
       },
       "configurations": {
         "production": {
@@ -40,8 +48,8 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
             }
           ],
           "fileReplacements": [
@@ -53,7 +61,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "optimization": false,
+          "optimization": true,
           "extractLicenses": false,
           "sourceMap": true
         }
@@ -83,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/uni-users/jest.config.ts"
       }
@@ -104,7 +114,12 @@
         "configDir": "apps/uni-users/.storybook",
         "browserTarget": "uni-users:build",
         "compodoc": true,
-        "compodocArgs": ["-e", "json", "-d", "apps/uni-users"]
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "apps/uni-users"
+        ]
       },
       "configurations": {
         "ci": {
@@ -114,13 +129,20 @@
     },
     "build-storybook": {
       "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputDir}"],
+      "outputs": [
+        "{options.outputDir}"
+      ],
       "options": {
         "outputDir": "dist/storybook/uni-users",
         "configDir": "apps/uni-users/.storybook",
         "browserTarget": "uni-users:build",
         "compodoc": true,
-        "compodocArgs": ["-e", "json", "-d", "apps/uni-users"]
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "apps/uni-users"
+        ]
       },
       "configurations": {
         "ci": {
@@ -136,7 +158,9 @@
     },
     "static-storybook": {
       "executor": "@nx/web:file-server",
-      "dependsOn": ["build-storybook"],
+      "dependsOn": [
+        "build-storybook"
+      ],
       "options": {
         "buildTarget": "uni-users:build-storybook",
         "staticFilePath": "dist/storybook/uni-users",

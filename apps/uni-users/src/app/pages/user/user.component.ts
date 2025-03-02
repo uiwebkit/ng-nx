@@ -5,7 +5,6 @@ import { SharedCalendarComponent } from '@ng-nx/shared-view';
 
 @Component({
   selector: 'app-user',
-  standalone: true,
   imports: [
     RouterLink,
     SharedCalendarComponent,

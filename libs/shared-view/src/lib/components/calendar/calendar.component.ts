@@ -7,7 +7,6 @@ import { CalendarStore, MonthNumber, ShortDaysOfWeek, UniCalendarService } from 
 
 @Component({
   selector: 'lib-shared-calendar',
-  standalone: true,
   imports: [
     FormsModule,
     MatFormFieldModule,
@@ -37,7 +36,7 @@ export class SharedCalendarComponent {
 
   constructor() {
     // synchronize inputs with store
-    effect((): void => this.updateYearStore(this.year()), { allowSignalWrites: true });
-    effect((): void => this.updateMonthStore(this.month()), { allowSignalWrites: true });
+    effect((): void => this.updateYearStore(this.year()));
+    effect((): void => this.updateMonthStore(this.month()));
   }
 }

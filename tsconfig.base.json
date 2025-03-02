@@ -2,6 +2,13 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "baseUrl": ".",
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
     "strict": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
@@ -11,12 +18,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "lib": ["ES2022", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
     "paths": {
       "@ng-nx/common-data": ["libs/common-data/src/index.ts"],
       "@ng-nx/shared-view": ["libs/shared-view/src/index.ts"],
@@ -24,5 +27,8 @@
       "@ng-nx/uni-users-view": ["libs/uni-users-view/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

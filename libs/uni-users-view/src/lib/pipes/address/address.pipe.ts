@@ -2,10 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 import { Location } from '@ng-nx/uni-users-data';
 
-@Pipe({
-  standalone: true,
-  name: 'address',
-})
+@Pipe({ name: 'address' })
 export class AddressPipe implements PipeTransform {
 
   transform(value: Location): string {

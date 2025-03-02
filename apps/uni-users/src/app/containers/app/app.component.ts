@@ -5,7 +5,6 @@ import { SharedLoadingComponent } from '@ng-nx/shared-view';
 
 @Component({
   selector: 'app-contained',
-  standalone: true,
   imports: [
     RouterOutlet,
     SharedLoadingComponent,

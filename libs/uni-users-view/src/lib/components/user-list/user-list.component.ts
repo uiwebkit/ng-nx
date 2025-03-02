@@ -15,7 +15,6 @@ import { DeepSignal } from '@ngrx/signals';
 
 @Component({
   selector: 'lib-user-list',
-  standalone: true,
   imports: [
     RouterLink,
     FormsModule,
@@ -47,8 +46,14 @@ export class UserListComponent implements OnInit {
   readonly dataStoreUsers: DeepSignal<MatTableDataSource<ExtendedUser>> = this.dataStore.users;
   readonly dataStoreTotal: Signal<number> = this.dataStore.total;
 
-  onSearchChangeStore: (search: string) => void = this.viewStore.onSearchChange;
-  onSortChangeStore: (sort: Sort) => void = this.viewStore.onSortChange;
+  onSearchChangeStore(search: string): void {
+    this.viewStore.onSearchChange(search);
+  }
+
+  onSortChangeStore(sort: Sort): void {
+    this.viewStore.onSortChange(sort);
+  }
+
   onPageChangeStore: (page: PageEvent) => void = this.viewStore.onPageChange;
 
   ngOnInit(): void {
